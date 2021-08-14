@@ -1,4 +1,4 @@
-# Information-Retrieval -System  
+# Information Retrieval System  
 
 ## Phase1-Simple inverted index
 In this Phase, a simple inverted index implemented by BOW(bag of word) representation for docs.
