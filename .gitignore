@@ -1,15 +1,15 @@
 
 *.log
 
-// ignore pickle objects
+#ignore pickle objects
 *.obj
 
 *.py
 
-// ignore ziped DataSet
+#ignore ziped DataSet
 *.zip
 
-// ignore documents
+#ignore documents
 *.docx
 *.pdf
 
