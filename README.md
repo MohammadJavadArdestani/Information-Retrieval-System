@@ -17,13 +17,13 @@ The most important steps implemented in this phase:
  - One word query responding (It's not a Ranked Retrieval system)
 <br><br>
 ## Phase2-Efficient query responding by heap and champion list
-In this phase we imporve IR system accuracy and speed by famous IR techniques 
+in this phase, we improve IR system accuracy and speed with famous IR techniques.  
 The most important steps implemented in this phase:
-- tf-idf Vector representation fro docs.
-- Similarity calculation (cosin-sim)
+- tf-idf Vector representation for docs.
+- Similarity calculation (cosine-sim)
 - Index elimination
 - Champion list (tf base)
-- K-top extraction by max-heap  
+- K-top extraction by max-heap
 <br><br>
 ## Phase3-Speed up query responding by K-means clustering and KNN
 <br><br>
