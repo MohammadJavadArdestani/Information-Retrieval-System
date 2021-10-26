@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+# Information Retrieval System  
 
-You can use the [editor on GitHub](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Phase1-Simple inverted index
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+The most important steps implemented in this phase:
+-  Persian Tokenizer
+-  Persian Normalization functions:
+    - remove_punctuation_marks()  
+    - remove_postfix()
+    - remove_prefix()
+    - verb_steaming()
+    - char_digit_unification()
+    - morakab_unification()
+    - remove_arabic_notations()
+ - Find and remove stop-words
+ - Inverted index by BOW (bag of word) representation for docs
+ - One word query responding (It's not a Ranked Retrieval system)
+<br><br>
+## Phase2-Efficient query responding by heap and champion list
+In this phase, we improve IR system accuracy and speed with famous IR techniques.  
+The most important steps implemented in this phase:
+- tf-idf Vector representation for docs
+- Similarity calculation (cosine-sim)
+- Index elimination
+- Champion list (tf base)
+- K-top extraction by max-heap
+- Pharase query responding (Ranked Retrieval system) 
+<br><br>
+## Phase3-Speed up query responding by K-means clustering and KNN
+In this phase, we use a larger dataset to deal with time and memory limitations.
+### K-means
+To have a Ranked Retrieval System like the second phase for query responding  ittakes a long time, for decreasing online computing we have to use clustering techniques. we chose k-means and after several experiments, we choose k = 100 and repeat clustering and updating centroid for 5 iterations.
+<br>
+### KNN
+In this section we implement a categorized search engine with 5 categories 
+- "culture" 
+- "economy"
+- "sports"
+- "politics"
+- "health"
+we use KNN for labeling docs and we check k = 3, 5, and 7 and get the best result by 5
+for search in this search engine, you have to enter your query like this.
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+cat:<cat> <query>
+ex: cat:sport قهرمانی پرسپولیس
+```
+<br><br>
+## License
+Distributed under the MIT License. See LICENSE for more information.
+<br><br>
+## Contact
+Mohammad Javad Ardestani: mjavad.ardestani00@gmail.com <br>
+Project Link: https://github.com/MohammadJavadArdestani/Information-Retrieval-System
+<br><br>
+## Acknowledgments
+- [NLP Stanford](https://nlp.stanford.edu/IR-book/html/htmledition/contents-1.html)
+- [Pickle](https://docs.python.org/3/library/pickle.html)
