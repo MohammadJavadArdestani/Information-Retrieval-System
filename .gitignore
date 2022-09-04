@@ -1,0 +1,21 @@
+
+*.log
+
+#ignore pickle objects
+*.obj
+
+*.py
+
+#ignore ziped DataSet
+*.zip
+
+#ignore documents
+*.docx
+*.pdf
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+
+profile_default/
+ipython_config.py
