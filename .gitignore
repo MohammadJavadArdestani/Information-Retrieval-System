@@ -12,6 +12,7 @@
 #ignore documents
 *.docx
 *.pdf
+*.xlsx
 
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
