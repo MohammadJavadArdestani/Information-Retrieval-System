@@ -5,12 +5,13 @@ which is not ranked retrieval.
 - Efficient query responding and ranked retrieval by using champions list and heap sort.
 - K-means and KNN are used to speed up query responding
 ## Table of Contents
-* [Simple inverted index](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase1-simple-inverted-index)
-* [Efficient query responding by heap and champion list](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase2-efficient-query-responding-by-heap-and-champion-list)
+* [Implement an inverted index for one-word queries](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase1--implement-an-inverted-index-for-one-word-queries)
+* [Efficient query responding by heapsort and champion list](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase2-efficient-query-responding-by-heapsort-and-champion-list)
 * [Speed up query responding by K-means clustering and KNN](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase3-speed-up-query-responding-by-k-means-clustering-and-knn)
 * [Boolean Retrieval and Spell Correction by  ElasticSearch](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase4-boolean-retrieval-and-spell-correction-by--elasticsearch)
 
-## Phase1-Simple inverted index
+
+## Phase1- Implement an inverted index for one-word queries
 
 The most important steps implemented in this phase:
 -  Persian Tokenizer
@@ -27,7 +28,7 @@ The most important steps implemented in this phase:
  - One word query responding (It's not a Ranked Retrieval system)
 <br><br>
 
-## Phase2-Efficient query responding by heap and champion list
+## Phase2-Efficient query responding by heapsort and champion list
 In this phase, we improve IR system accuracy and speed with famous IR techniques.  
 The most important steps implemented in this phase:
 - tf-idf Vector representation for docs
@@ -57,9 +58,48 @@ for search in this search engine, you have to enter your query like this.
 cat:<cat> <query>
 ex: cat:sport قهرمانی پرسپولیس
 ```
-<br><br>
+<br>
 
 ## Phase4-Boolean Retrieval and Spell Correction by  ElasticSearch
+In this phase, we work by ```ElasticSearch``` to deal with  larger dataset. This phase can be divided in 2 parts. <br>
+1. Boolean Retrieval
+2. Spell Correction
+### Boolean Retrieval
+At first, an inverted index was created by ```Bulk API```, which is more than 30 times faster than For loop iteration. The query structure is implemented in a way that the user can search for a phrase that includes several words or imply some operations like and (&), or (||), and not (!) to make more accurate queries.
+```bash
+query= {
+        "bool": {
+          "should": [
+              { 
+                "match": {
+                  "content": {
+                    "query": "", # add query word 
+                  }
+                }
+              }, 
+              
+              { 
+                "match_phrase":{
+                  "content":{
+                    "query":"", # add query word 
+                  }
+                }  
+              },
+          ],
+          "must_not": [
+              {
+                "match": {
+                  "content": {
+                    "query": "", # add query word 
+                  }
+                }
+              }
+          ],
+        },
+    }
+```
+For more details, you can [Match Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html#match-top-level-params) and [Match Phrase Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase.html).
+### Spell Correction
 
 ## License
 Distributed under the MIT License. See LICENSE for more information.
