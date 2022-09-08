@@ -2,13 +2,14 @@
 This is project is implemented for ISNA news agency dataset in three phases:
 - Tokenizer and normalizer functions are implemented for Persian texts and one-word query responding,
 which is not ranked retrieval.
-- Efficient query responding and ranked retrieval by using champions list and heap sort.
-- K-means and KNN are used to speed up query responding
+- Efficient query responding and ranked retrieval by using champions list and heapsort.
+- K-means and KNN are used to speed up query responding. 
+- Boolean Retrieval and Spell Correction system implemented using ElasticSearch. 
 ## Table of Contents
 * [Implement an inverted index for one-word queries](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase1--implement-an-inverted-index-for-one-word-queries)
 * [Efficient query responding by heapsort and champion list](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase2-efficient-query-responding-by-heapsort-and-champion-list)
 * [Speed up query responding by K-means clustering and KNN](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase3-speed-up-query-responding-by-k-means-clustering-and-knn)
-* [Boolean Retrieval and Spell Correction by  ElasticSearch](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase4-boolean-retrieval-and-spell-correction-by--elasticsearch)
+* [Boolean Retrieval and Spell Correction using  ElasticSearch](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase4-boolean-retrieval-and-spell-correction-by--elasticsearch)
 
 
 ## Phase1- Implement an inverted index for one-word queries
@@ -60,7 +61,7 @@ ex: cat:sport قهرمانی پرسپولیس
 ```
 <br>
 
-## Phase4-Boolean Retrieval and Spell Correction by  ElasticSearch
+## Phase4-Boolean Retrieval and Spell Correction using  ElasticSearch
 In this phase, we work by ```ElasticSearch``` to deal with  larger dataset. This phase can be divided in 2 parts. <br>
 1. Boolean Retrieval
 2. Spell Correction
