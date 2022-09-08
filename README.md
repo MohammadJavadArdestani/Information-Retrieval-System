@@ -1,5 +1,5 @@
 # Information Retrieval System  
-This is project is implemented for ISNA news agency dataset in three phases:
+This is project is implemented for ISNA news agency dataset in four phases:
 - Tokenizer and normalizer functions are implemented for Persian texts and one-word query responding,
 which is not ranked retrieval.
 - Efficient query responding and ranked retrieval by using champions list and heapsort.
