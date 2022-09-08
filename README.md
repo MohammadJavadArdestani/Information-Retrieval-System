@@ -12,7 +12,7 @@ which is not ranked retrieval.
 * [Boolean Retrieval and Spell Correction using  ElasticSearch](https://github.com/MohammadJavadArdestani/Information-Retrieval-System/edit/main/README.md#phase4-boolean-retrieval-and-spell-correction-by--elasticsearch)
 
 
-## Phase1- Implement an inverted index for one-word queries
+## Phase1-Implement an inverted index for one-word queries
 
 The most important steps implemented in this phase:
 -  Persian Tokenizer
