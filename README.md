@@ -100,7 +100,11 @@ query= {
 ```
 For more details, you can [Match Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html#match-top-level-params) and [Match Phrase Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query-phrase.html).
 ### Spell Correction
-
+I implemented a spelling correction system with Elasticsearch. There are three steps and in each of which we add a feature and make an improvement. For the implementations, I used Python Elasticsearch Client.<br> 
+steps:
+* Creating index of trigrams and bigrams
+* Index construction with inverted tokens
+* Synonymous word checking
 ## License
 Distributed under the MIT License. See LICENSE for more information.
 <br><br>
